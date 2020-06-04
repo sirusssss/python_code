@@ -1,0 +1,12 @@
+'''
+a,b,c三根柱子，a上有n个盘子，借助b，将这n个盘子挪到c上，
+给出挪动路线
+'''
+# -*- coding: utf-8 -*-
+def move(n, a, b, c):
+    if n == 1:
+        print(a, '-->', c)
+    else:
+        move(n-1,a,c,b) #把除最后一个以外的盘子从a借助b挪到c
+        move(1,a,b,c) #把最后一个盘子从啊挪到c
+        move(n-1,b,a,c) #把剩下n-1个盘子从b借助a挪到c
